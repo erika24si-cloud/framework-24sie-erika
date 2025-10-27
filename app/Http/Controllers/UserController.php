@@ -62,15 +62,15 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $user_id = $id;
-        $user = user::findOrFail($user_id);
+        $id = $id;
+        $user = User::findOrFail($user_id);
 
         $user->name = $request->name;
         $user->email  = $request->email;
         $user->password   = $request->password;
 
         $user->save();
-        return redirect()->route('user.index')->with('update', 'Perubahan Data Berhasil!');
+        return redirect()->route('user.index')->with('success', 'Perubahan Data Berhasil!');
     }
 
     /**
@@ -78,6 +78,8 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect()->route('user.index')->with('success', 'Hapus Data Berhasil!');
     }
 }

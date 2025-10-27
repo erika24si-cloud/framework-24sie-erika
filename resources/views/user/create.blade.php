@@ -1,4 +1,6 @@
 @extends('layouts.admin.app')
+@section('title','Tambah user')
+
 @section('content')
  {{-- Start content --}}
         <div class="py-4">
@@ -33,14 +35,14 @@
             <div class="col-12 mb-4">
                 <div class="card border-0 shadow components-section">
                     <div class="card-body">
-                        <form action="{{ route('user.store')}}" method="POST">
+                        <form action="{{ route('user.store')}}"method="POST">
                             @csrf
                             <div class="row mb-4">
                                 <div class="col-lg-4 col-sm-6">
                                     <!-- nama -->
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Nama lengkap</label>
-                                        <input type="name" name ="name" id="name" class="form-control" required>
+                                        <input type="text" name ="name" id="name" class="form-control" required>
                                     </div>
 
                                     <!-- email -->
@@ -60,7 +62,7 @@
 
                                     <!-- password confirmation -->
                                     <div class="mb-3">
-                                        <label for="password_confirmation" class="form-label">Password Confirmation</label>
+                                        <label for="password_confirmation" class="form-label">Confirm password</label>
                                         <input type="password" name = "password_confirmation" id="password_confirmation" class="form-control">
                                     </div>
 

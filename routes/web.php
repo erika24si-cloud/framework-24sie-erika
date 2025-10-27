@@ -37,3 +37,4 @@ Route::post('question/store', [QuestionController::class, 'store'])
 Route::resource('pelanggan', PelangganController::class);
 
 Route::resource ('user', UserController::class);
+
